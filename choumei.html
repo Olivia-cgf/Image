@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="dist/css/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 500px;
+        height: 300px;
+        margin: 20px auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /*background: #fff;*/
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-slide img{
+        width:100%;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506661800119&di=3bb7214158f6501e0deab81c616a7f8a&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F9922720e0cf3d7ca8427326bf81fbe096a63a9de.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506661800119&di=6d9cf1dbca54d001633dfc68ec653227&imgtype=0&src=http%3A%2F%2Fimg.idol001.com%2Forigin%2F2017%2F02%2F20%2F10e560f26ff650608b7b81fb549e6bd51487577766.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506661800118&di=04f9c1b2b42cabd96a2e07cae3792dcf&imgtype=0&src=http%3A%2F%2Fimg.idol001.com%2Forigin%2F2017%2F09%2F28%2F19425037a31ecc1b8370266c5639f0231506564294.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506661800117&di=6d0d407c4f48da791a5d8ad49a9e4f28&imgtype=0&src=http%3A%2F%2Fwww.pp3.cn%2Fuploads%2F201501%2F2015010304.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506661851805&di=e22053fa370182bf541f31ee95b4f453&imgtype=0&src=http%3A%2F%2Fcdn.static.koreastardaily.com%2F2016-08-19%2F83051-450173.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2523570409,3108825873&fm=27&gp=0.jpg" alt="">
+            </div>
+        </div>
+    </div>
+ 
+    
+<!--     <div class="button-next"></div>
+<div class="button-prev"></div> -->
+
+    <!-- Swiper JS -->
+    <script src="dist/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var mySwiper = new Swiper('.swiper-container', {
+        effect: 'coverflow', //3d滑动
+        grabCursor: true, //鼠标覆盖Swiper时指针会变成手掌形状
+        centeredSlides: true,//活动块会居中，而不是默认状态下的居左。
+        slidesPerView: 'auto',//设置slider容器能够同时显示的slides数量(carousel模式)。可以设置为数字（可为小数，小数不可loop），或者 'auto'则自动根据slides的宽度来设定数量
+        loop:false,
+        slidesPerView: 2, //显示开始的图片张数
+        coverflow: {
+            rotate: 0,  //设置为0
+            stretch: 0, //每个slide之间的拉伸值，越大slide靠得越紧
+            depth: 200,//slide的位置深度。值越大z轴距离越远，看起来越小
+            modifier: 2, //depth和rotate和stretch的倍率，相当于depth*modifier、rotate*modifier、stretch*modifier，值越大这三个参数的效果越明显。默认1。
+            slideShadows : true
+        }   
+    });
+ 
+    $('.contrast-box').on('click', 'li:not(.combin-btn)', function(){
+        var _index = $(this).data('index') + 1;
+        mySwiper.slideTo(_index, 500, false);//切换到第一个slide，速度为1秒
+    });
+    </script>
+</body>
+</html>
